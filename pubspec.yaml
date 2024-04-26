@@ -1,4 +1,4 @@
-name: rive_animated_icons
+name: rive_animated_icon
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
@@ -9,6 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+  rive: ^0.13.2
 
 dev_dependencies:
   flutter_test:
