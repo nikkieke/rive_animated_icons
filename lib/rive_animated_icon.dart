@@ -1,0 +1,1 @@
+export 'src/rive_icon.dart';

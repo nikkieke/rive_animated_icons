@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animated_icon/rive_animated_icon.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    return const Scaffold();
+    return const Scaffold(
+      body: Column(
+        children: [
+          RiveAnimatedIcon(riveIcons: RiveIcons.home),
+        ],
+      ),
+    );
   }
 }
