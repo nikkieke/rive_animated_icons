@@ -32,11 +32,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [
-          RiveAnimatedIcon(riveIcons: RiveIcons.home),
-        ],
+    return  Scaffold(
+      backgroundColor: Colors.blue,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              children: RiveIcons.values.map(
+                      (RiveIcons e) => Padding(
+                          padding: const EdgeInsets.all(5.0),
+                        child: Column(
+                          children: [
+                            RiveAnimatedIcon(
+                              riveIcons: e,
+                              width: 50,
+                              height: 50,
+                              loopAnimation: false,
+                              onTap: (){},
+                            ),
+                          ],
+                        ),
+                      )
+              ).toList()
+            ),
+          ),
+        )
       ),
     );
   }

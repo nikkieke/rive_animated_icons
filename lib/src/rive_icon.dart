@@ -9,7 +9,8 @@ class RiveAnimatedIcon extends StatefulWidget {
     this.color = Colors.black,
     required this.riveIcons,
     this.onTap,
-    this.onHover
+    this.onHover,
+    this.loopAnimation = false,
   });
 
 
@@ -24,6 +25,8 @@ class RiveAnimatedIcon extends StatefulWidget {
   final VoidCallback? onTap;
 
   final Function? onHover;
+
+  final bool? loopAnimation;
 
 
 
@@ -42,26 +45,43 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
         Future.delayed(const Duration(seconds: 1),(){
           icon.input!.change(false);
         });
+        print('tapped');
         widget.onTap;
       },
       onHover: (_){
-
+        icon.input!.change(true);
+        Future.delayed(const Duration(seconds: 1),(){
+          icon.input!.change(false);
+        });
+        widget.onHover;
       },
       child: SizedBox(
         height: widget.height,
         width: widget.width,
-        child: Image.asset('assets/rive_assets/image.png',),
-        // RiveAnimation.asset(
-        //       icon.src,
-        //       artboard: icon.artboard,
-        //       onInit: (artboard){
-        //         StateMachineController controller =
-        //             RiveUtil.getRiveController(artboard,
-        //               stateMachineName: icon.stateMachineName,
-        //             );
-        //         icon.input = controller.findSMI("active") as SMIBool;
-        //       },
-        // ),
+        child: RiveAnimation.asset(
+              icon.src,
+              artboard: icon.artboard,
+              onInit: (artboard){
+                StateMachineController controller =
+                    RiveUtil.getRiveController(artboard,
+                      stateMachineName: icon.stateMachineName,
+                    );
+                icon.input = controller.findSMI("active") as SMIBool;
+
+                artboard.forEachComponent((child) {
+                  if(child is Shape){
+                    final Shape shape = child;
+                    if(shape.name == icon.shapeStrokeTitle){
+                      shape.strokes.first.paint.color = widget.color;
+                    }else if(shape.name == icon.shapeFillTitle){
+                      shape.fills.first.paint.color = widget.color;
+                    }
+                  }
+                });
+
+                widget.loopAnimation == true? icon.input!.change(true): icon.input!.change(false);
+              },
+        ),
       ),
 
     );
@@ -94,6 +114,7 @@ class RiveUtil{
 
 class RiveAsset{
   final String artboard, stateMachineName, title, src;
+  final String? shapeFillTitle, shapeStrokeTitle;
   late SMIBool? input;
 
   RiveAsset({
@@ -101,7 +122,9 @@ class RiveAsset{
         required this.artboard,
         required this.stateMachineName,
         required this.title,
-        this.input
+        this.input,
+        this.shapeFillTitle,
+        this.shapeStrokeTitle,
   });
 
   set setInput(SMIBool status){
@@ -114,7 +137,77 @@ extension RiveIconExtension on RiveIcons{
   RiveAsset getRiveAsset(){
     switch(this){
       case RiveIcons.home:
-        return RiveAsset(src: Asset.iconSet1, artboard: 'HOME', stateMachineName: 'HOME_interactivity', title: 'Home');
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'HOME',
+            stateMachineName: 'HOME_interactivity',
+            title: 'Home',
+            shapeStrokeTitle: 'home');
+      case RiveIcons.search:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'SEARCH',
+            stateMachineName: 'SEARCH_Interactivity',
+            title: 'Search',
+            shapeStrokeTitle: 'search');
+      case RiveIcons.refresh:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'REFRESH/RELOAD',
+            stateMachineName: 'RELOAD_Interactivity',
+            title: 'Refresh',
+            shapeStrokeTitle: 'refresh');
+      case RiveIcons.profile:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'USER',
+            stateMachineName: 'USER_Interactivity',
+            title: 'Profile',
+            shapeStrokeTitle: 'user');
+      case RiveIcons.chat:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'CHAT',
+            stateMachineName: 'CHAT_Interactivity',
+            title: 'Chat',
+            shapeFillTitle: 'chat',
+            shapeStrokeTitle: 'chat',
+            );
+      case RiveIcons.audio:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'AUDIO',
+            stateMachineName: 'AUDIO_Interactivity',
+            title: 'Audio',
+            shapeStrokeTitle: 'speaker');
+      case RiveIcons.bell:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'BELL',
+            stateMachineName: 'BELL_Interactivity',
+            title: 'Bell',
+            shapeStrokeTitle: 'bell');
+      case RiveIcons.settings:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'SETTINGS',
+            stateMachineName: 'SETTINGS_Interactivity',
+            title: 'Settings',
+            shapeStrokeTitle: 'settings');
+      case RiveIcons.star:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'LIKE/STAR',
+            stateMachineName: 'STAR_Interactivity',
+            title: 'Star',
+            shapeStrokeTitle: 'star');
+      case RiveIcons.timer:
+        return RiveAsset(
+            src: Asset.iconSet1,
+            artboard: 'TIMER',
+            stateMachineName: 'TIMER_Interactivity',
+            title: 'Timer',
+            shapeStrokeTitle: 'timer');
       default:
         return RiveAsset(src: Asset.iconSet1, artboard: 'HOME', stateMachineName: 'HOME_interactivity', title: 'Home');
     }
@@ -122,5 +215,5 @@ extension RiveIconExtension on RiveIcons{
 }
 
 class Asset{
-  static const iconSet1 = 'assets/rive_assets/icons1.riv';
+  static const iconSet1 = 'packages/rive_animated_icon/assets/icons1.riv';
 }
