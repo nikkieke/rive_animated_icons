@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -48,8 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               riveIcons: e,
                               width: 50,
                               height: 50,
-                              loopAnimation: false,
+                              loopAnimation: true,
                               onTap: (){},
+                              color: Colors.blue,
                             ),
                           ],
                         ),
