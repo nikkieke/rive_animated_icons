@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Center(
             child: Wrap(
-              alignment: WrapAlignment.center,
+              alignment: WrapAlignment.start,
               children: RiveIcons.values.map(
                       (RiveIcons e) => Padding(
                           padding: const EdgeInsets.all(5.0),
