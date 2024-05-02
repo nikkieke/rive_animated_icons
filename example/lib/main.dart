@@ -33,24 +33,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
             child: Wrap(
               alignment: WrapAlignment.start,
-              children: RiveIcons.values.map(
-                      (RiveIcons e) => Padding(
+              children: RiveIcon.values.map(
+                      (RiveIcon e) => Padding(
                           padding: const EdgeInsets.all(5.0),
                         child: Column(
                           children: [
+                            const SizedBox(height: 10,),
                             RiveAnimatedIcon(
-                              riveIcons: e,
+                              riveIcon: e,
                               width: 50,
                               height: 50,
                               loopAnimation: true,
                               onTap: (){},
-                              color: Colors.blue,
+                              color: Colors.green,
                             ),
                           ],
                         ),

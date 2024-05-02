@@ -12,7 +12,7 @@ class RiveUtil{
 
 class RiveAsset{
   final String artboard,title, src;
-  final String? shapeFillTitle, shapeStrokeTitle, shapeStrokeTitle2, stateMachineName;
+  final String? shapeFillTitle, shapeStrokeTitle, stateMachineName;
   late SMIBool? input;
 
   RiveAsset({
@@ -23,7 +23,6 @@ class RiveAsset{
     this.input,
     this.shapeFillTitle,
     this.shapeStrokeTitle,
-    this.shapeStrokeTitle2,
   });
 
   set setInput(SMIBool status){
@@ -37,4 +36,5 @@ class RiveAsset{
 class Asset{
   static const iconSet1 = 'packages/rive_animated_icon/assets/icons1.riv';
   static const iconSet2 = 'packages/rive_animated_icon/assets/icons2.riv';
+  static const iconSet3 = 'packages/rive_animated_icon/assets/icons3.riv';
 }
