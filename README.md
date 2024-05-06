@@ -16,7 +16,7 @@ This package provides rive animated icons that can be customized to suit your pr
 ### Icons Sample
 ![InShot_20240502_142027413](https://github.com/nikkieke/rive_animated_icons/assets/95222620/893adf6f-d9e8-4441-a6c0-b154331dfadc)
 
-### Example
+## Example
 
 ```dart
 
@@ -56,5 +56,6 @@ This callback is set by the user to perform actions onTap
 #### onHover:
 This callback is set by the user to perform actions onHover
 
-
+## Maintainer
+- [Nikki Eke](https://github.com/nikkieke)
 
