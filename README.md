@@ -59,6 +59,6 @@ This callback is set by the user to perform actions onHover
 ## License
 Rive Animated Icons is [MIT-licensed](https://github.com/nikkieke/rive_animated_icons/edit/main/LICENSE)
 
-## Maintainer
+## Maintainers
 - [Nikki Eke](https://github.com/nikkieke)
 
