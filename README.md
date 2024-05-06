@@ -56,6 +56,9 @@ This callback is set by the user to perform actions onTap
 #### onHover:
 This callback is set by the user to perform actions onHover
 
+## LICENSE:
+Rive Animated Icons is [MIT-licensed](https://github.com/Mindinventory/flutter_draggable_gridview/blob/main/LICENSE "MIT-licensed").
+
 ## Maintainer
 - [Nikki Eke](https://github.com/nikkieke)
 
