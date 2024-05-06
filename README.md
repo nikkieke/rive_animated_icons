@@ -31,12 +31,12 @@ RiveAnimatedIcon(
 ),
 
 ```
-### Required parameter
+## Required parameter
 
 #### riveIcon:
 This parameter is used to define the icon type from the RiveIcon enum
 
-### Optional parameters
+## Optional parameters
 
 #### width:
 This parameter is used to set the icon width
