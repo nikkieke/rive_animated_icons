@@ -1,15 +1,15 @@
-import 'package:rive/rive.dart';
 import 'package:flutter/material.dart';
-import '../rive_animated_icon.dart';
+import 'package:rive/rive.dart';
+
+import 'package:rive_animated_icon/rive_animated_icon.dart';
 
 /// [RiveAnimatedIcon] is used to render animated icons with different parameters and callbacks
 class RiveAnimatedIcon extends StatefulWidget {
   const RiveAnimatedIcon({
-    super.key,
+    required this.riveIcon, super.key,
     this.height = 20,
     this.width = 20,
     this.color = Colors.black,
-    required this.riveIcon,
     this.onTap,
     this.onHover,
     this.loopAnimation = false,
@@ -37,11 +37,11 @@ class RiveAnimatedIcon extends StatefulWidget {
 
   /// [onHover] is a callback which is sent by user depend on his requirements.
   /// it's an  optional parameter for [RiveAnimatedIcon]
-  final Function? onHover;
+  final ValueChanged<bool>? onHover;
 
   /// [loopAnimation] is a boolean to set animation on loop or not.
   /// Default Value: false
-  final bool? loopAnimation;
+  final bool loopAnimation;
 
 
 
@@ -53,21 +53,21 @@ class RiveAnimatedIcon extends StatefulWidget {
 class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
   @override
   Widget build(BuildContext context) {
-    RiveAsset icon = widget.riveIcon.getRiveAsset();
+    final icon = widget.riveIcon.getRiveAsset();
     return InkWell(
       onTap: (){
         icon.input!.change(true);
         Future.delayed(const Duration(seconds: 1),(){
           icon.input!.change(false);
         });
-        widget.onTap;
+        widget.onTap != null? widget.onTap!(): debugPrint('');
       },
-      onHover: (_){
+      onHover: (value){
         icon.input!.change(true);
         Future.delayed(const Duration(seconds: 1),(){
           icon.input!.change(false);
         });
-        widget.onHover;
+        widget.onHover != null? widget.onHover!(value): debugPrint('');
       },
       child: SizedBox(
         height: widget.height,
@@ -76,15 +76,15 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
           icon.src,
           artboard: icon.artboard,
           onInit: (artboard){
-            StateMachineController controller =
+            final controller =
             RiveUtil.getRiveController(artboard,
-              stateMachineName: icon.stateMachineName,
+              stateMachineName: '${icon.stateMachineName}',
             );
-            icon.input = controller.findSMI("active") as SMIBool;
+            icon.input = controller.findSMI('active') as SMIBool;
 
             artboard.forEachComponent((child) {
               if(child is Shape){
-                final Shape shape = child;
+                final shape = child;
                 if(shape.name == icon.shapeStrokeTitle){
                   shape.strokes.first.paint.color = widget.color;
                 }else if(shape.name == icon.shapeFillTitle){

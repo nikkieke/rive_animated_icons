@@ -49,8 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               riveIcon: e,
                               width: 50,
                               height: 50,
-                              loopAnimation: true,
-                              onTap: (){},
+                              loopAnimation: false,
+                              onTap: (){
+                                debugPrint('tapped');
+                              },
+                              // onHover: (value){
+                              //   debugPrint('value is $value');
+                              // },
                               color: Colors.green,
                             ),
                           ],
