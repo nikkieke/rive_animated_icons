@@ -53,9 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               onTap: (){
                                 debugPrint('tapped');
                               },
-                              // onHover: (value){
-                              //   debugPrint('value is $value');
-                              // },
+                              onHover: (value){
+                                debugPrint('value is $value');
+                              },
                               color: Colors.green,
                             ),
                           ],
