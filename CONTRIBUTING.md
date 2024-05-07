@@ -22,4 +22,4 @@ If you'll be reporting an issue, do provide the following in other to help us as
 - Screenshot/video with steps to reproduce the issue.
 
 ## Getting in touch
-If you want to ask a question or get feedback on an idea, you can send a DM on X(twitter) to @nikki_eke. Also we'd love to see you use our package, you can share links to your project as well
+If you want to ask a question or get feedback on an idea, you can send a DM on X(twitter) to [@nikki_eke](https://twitter.com/nikki_eke). Also we'd love to see you use our package, you can share links to your project as well
