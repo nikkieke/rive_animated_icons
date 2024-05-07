@@ -59,6 +59,12 @@ This callback is set by the user to perform actions onHover
 ## License
 Rive Animated Icons is [MIT-licensed](https://github.com/nikkieke/rive_animated_icons/edit/main/LICENSE)
 
+## Animation credits
+All the icons used in this project are animated in Rive and most of them are available in the Rive community, here are the names of 
+those that animated the icons currently available in the package, you can find them in the [Rive community](https://rive.app/community/files/)
+- @drawsgood
+- @Daniyar
+
 ## Maintainers
 - [Nikki Eke](https://github.com/nikkieke)
 
