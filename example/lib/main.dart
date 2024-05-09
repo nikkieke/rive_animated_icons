@@ -22,50 +22,51 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key,});
+  const MyHomePage({
+    super.key,
+  });
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Wrap(
+          child: SingleChildScrollView(
+        child: Center(
+          child: Wrap(
               alignment: WrapAlignment.start,
-              children: RiveIcon.values.map(
-                      (RiveIcon e) => Padding(
-                          padding: const EdgeInsets.all(5.0),
+              children: RiveIcon.values
+                  .map((RiveIcon e) => Padding(
+                        padding: const EdgeInsets.all(5.0),
                         child: Column(
                           children: [
-                            const SizedBox(height: 10,),
+                            const SizedBox(
+                              height: 10,
+                            ),
                             RiveAnimatedIcon(
                               riveIcon: e,
                               width: 50,
                               height: 50,
                               loopAnimation: false,
-                              onTap: (){
+                              onTap: () {
                                 debugPrint('tapped');
                               },
-                              onHover: (value){
+                              onHover: (value) {
                                 debugPrint('value is $value');
                               },
                               color: Colors.green,
                             ),
                           ],
                         ),
-                      )
-              ).toList()
-            ),
-          ),
-        )
-      ),
+                      ))
+                  .toList()),
+        ),
+      )),
     );
   }
 }

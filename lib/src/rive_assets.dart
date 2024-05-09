@@ -1,10 +1,12 @@
 import 'package:rive/rive.dart';
 
-class RiveUtil{
-  static StateMachineController getRiveController(Artboard artboard,
-      {String stateMachineName = 'State Machine 1',}){
+class RiveUtil {
+  static StateMachineController getRiveController(
+    Artboard artboard, {
+    String stateMachineName = 'State Machine 1',
+  }) {
     final controller =
-    StateMachineController.fromArtboard(artboard,stateMachineName);
+        StateMachineController.fromArtboard(artboard, stateMachineName);
     artboard.addController(controller!);
     return controller;
   }
@@ -12,12 +14,12 @@ class RiveUtil{
 
 ///[RiveAsset] class contains all the parameters required to successfully render
 ///rive animated icons
-class RiveAsset{
-
+class RiveAsset {
   RiveAsset({
     required this.src,
     required this.artboard,
-    required this.title, this.stateMachineName,
+    required this.title,
+    this.stateMachineName,
     this.input,
     this.shapeFillTitle,
     this.shapeStrokeTitle,
@@ -30,15 +32,13 @@ class RiveAsset{
   final String? stateMachineName;
   late SMIBool? input;
 
-  set setInput(SMIBool status){
+  set setInput(SMIBool status) {
     input = status;
   }
-
 }
 
-
 ///The [Asset] class provides access to all the available icon's file paths
-class Asset{
+class Asset {
   static const iconSet1 = 'packages/rive_animated_icon/assets/icons1.riv';
   static const iconSet2 = 'packages/rive_animated_icon/assets/icons2.riv';
   static const iconSet3 = 'packages/rive_animated_icon/assets/icons3.riv';

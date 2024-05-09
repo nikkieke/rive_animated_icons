@@ -6,7 +6,8 @@ import 'package:rive_animated_icon/rive_animated_icon.dart';
 /// [RiveAnimatedIcon] is used to render animated icons with different parameters and callbacks
 class RiveAnimatedIcon extends StatefulWidget {
   const RiveAnimatedIcon({
-    required this.riveIcon, super.key,
+    required this.riveIcon,
+    super.key,
     this.height = 20,
     this.width = 20,
     this.color = Colors.black,
@@ -43,9 +44,6 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// Default Value: false
   final bool loopAnimation;
 
-
-
-
   @override
   State<RiveAnimatedIcon> createState() => _RiveAnimatedIconState();
 }
@@ -55,16 +53,16 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
   Widget build(BuildContext context) {
     final icon = widget.riveIcon.getRiveAsset();
     return InkWell(
-      onTap: (){
+      onTap: () {
         icon.input!.change(true);
-        Future.delayed(const Duration(seconds: 1),(){
+        Future.delayed(const Duration(seconds: 1), () {
           icon.input!.change(false);
         });
         widget.onTap?.call();
       },
-      onHover: (value){
+      onHover: (value) {
         icon.input!.change(true);
-        Future.delayed(const Duration(seconds: 1),(){
+        Future.delayed(const Duration(seconds: 1), () {
           icon.input!.change(false);
         });
         widget.onHover?.call(value);
@@ -75,28 +73,29 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
         child: RiveAnimation.asset(
           icon.src,
           artboard: icon.artboard,
-          onInit: (artboard){
-            final controller =
-            RiveUtil.getRiveController(artboard,
+          onInit: (artboard) {
+            final controller = RiveUtil.getRiveController(
+              artboard,
               stateMachineName: '${icon.stateMachineName}',
             );
             icon.input = controller.findSMI('active') as SMIBool;
 
             artboard.forEachComponent((child) {
-              if(child is Shape){
+              if (child is Shape) {
                 final shape = child;
-                if(shape.name == icon.shapeStrokeTitle){
+                if (shape.name == icon.shapeStrokeTitle) {
                   shape.strokes.first.paint.color = widget.color;
-                }else if(shape.name == icon.shapeFillTitle){
+                } else if (shape.name == icon.shapeFillTitle) {
                   shape.fills.first.paint.color = widget.color;
                 }
               }
             });
-            widget.loopAnimation == true? icon.input!.change(true): icon.input!.change(false);
+            widget.loopAnimation == true
+                ? icon.input!.change(true)
+                : icon.input!.change(false);
           },
         ),
       ),
-
     );
   }
 }
