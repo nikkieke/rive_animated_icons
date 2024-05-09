@@ -1,6 +1,6 @@
 name: rive_animated_icon
 description: "This package provides rive animated icons that can be customized to suit your preference."
-version: 0.1.0
+version: 1.0.1
 repository: https://github.com/nikkieke/rive_animated_icons
 issue_tracker: https://github.com/nikkieke/rive_animated_icons/issues
 topics: [icons, animation]
@@ -11,7 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
   rive: ^0.12.4
 
 dev_dependencies:
