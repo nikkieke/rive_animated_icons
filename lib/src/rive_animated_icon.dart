@@ -60,14 +60,14 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
         Future.delayed(const Duration(seconds: 1),(){
           icon.input!.change(false);
         });
-        widget.onTap != null? widget.onTap!(): debugPrint('');
+        widget.onTap?.call();
       },
       onHover: (value){
         icon.input!.change(true);
         Future.delayed(const Duration(seconds: 1),(){
           icon.input!.change(false);
         });
-        widget.onHover != null? widget.onHover!(value): debugPrint('');
+        widget.onHover?.call(value);
       },
       child: SizedBox(
         height: widget.height,
