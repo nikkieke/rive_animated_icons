@@ -54,9 +54,9 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
     final icon = widget.riveIcon.getRiveAsset();
     return InkWell(
       onTap: () {
-        icon.input!.change(true);
+        icon.input?.change(true);
         Future.delayed(const Duration(seconds: 1), () {
-          icon.input!.change(false);
+          icon.input?.change(false);
         });
         widget.onTap?.call();
       },

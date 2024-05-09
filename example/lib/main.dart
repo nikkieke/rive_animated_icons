@@ -65,6 +65,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ))
                   .toList()),
+          // child:  RiveAnimatedIcon(
+          //   riveIcon: RiveIcon.message,
+          //   width: 50,
+          //   height: 50,
+          //   color: Colors.green,
+          //   loopAnimation: false,
+          //   onTap: (){},
+          // ),
         ),
       )),
     );
