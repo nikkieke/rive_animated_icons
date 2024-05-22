@@ -42,4 +42,5 @@ class Asset {
   static const iconSet1 = 'packages/rive_animated_icon/assets/icons1.riv';
   static const iconSet2 = 'packages/rive_animated_icon/assets/icons2.riv';
   static const iconSet3 = 'packages/rive_animated_icon/assets/icons3.riv';
+  static const iconSet4 = 'packages/rive_animated_icon/assets/icons4.riv';
 }
