@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               riveIcon: e,
                               width: 50,
                               height: 50,
-                              loopAnimation: false,
+                              loopAnimation: true,
                               onTap: () {
                                 debugPrint('tapped');
                               },
@@ -65,14 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ))
                   .toList()),
-          // child:  RiveAnimatedIcon(
-          //   riveIcon: RiveIcon.message,
-          //   width: 50,
-          //   height: 50,
-          //   color: Colors.green,
-          //   loopAnimation: false,
-          //   onTap: (){},
-          // ),
         ),
       )),
     );
