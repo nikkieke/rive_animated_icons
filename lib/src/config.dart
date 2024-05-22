@@ -33,6 +33,18 @@ enum RiveIcon {
   message,
   menuDots,
   cursor,
+  add,
+  sound,
+  location,
+  timer2,
+  wifi,
+  copy,
+  unlock,
+  dislike,
+  like,
+  call,
+  warning,
+  edit,
 }
 
 /// [RiveIconExtension] is used to return relevant RiveAsset depending on [RiveIcon]
@@ -278,6 +290,109 @@ extension RiveIconExtension on RiveIcon {
           title: 'User',
           shapeStrokeTitle: 'user',
           stateMachineName: 'State-machine',
+        );
+      case RiveIcon.add:
+        return RiveAsset(
+            src: Asset.iconSet4,
+            artboard: 'add',
+            title: 'Add',
+            shapeStrokeTitle: 'add',
+            stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.call:
+        return RiveAsset(
+            src: Asset.iconSet4,
+            artboard: 'call',
+            title: 'Call',
+            shapeStrokeTitle: 'call',
+            stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.copy:
+        return RiveAsset(
+            src: Asset.iconSet4,
+            artboard: 'copy',
+            title: 'Copy',
+            shapeStrokeTitle: 'copy',
+            stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.dislike:
+        return RiveAsset(
+            src: Asset.iconSet4,
+            artboard: 'dislike',
+            title: 'Dislike',
+            shapeStrokeTitle: 'dislike',
+            stateMachineName: 'State Machine 1',
+        );
+
+      case RiveIcon.edit:
+        return RiveAsset(
+            src: Asset.iconSet4,
+            artboard: 'edit',
+            title: 'Edit',
+            shapeFillTitle: 'edit',
+            stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.location:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'location',
+          title: 'Location',
+          shapeFillTitle: 'location',
+          stateMachineName: 'State Machine 1',
+        );
+
+      case RiveIcon.like:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'like',
+          title: 'Like',
+          shapeStrokeTitle: 'like',
+          stateMachineName: 'State Machine 1',
+        );
+
+      case RiveIcon.sound:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'sound',
+          title: 'Sound',
+          shapeStrokeTitle: 'sound',
+          stateMachineName: 'State Machine 1',
+        );
+
+      case RiveIcon.timer2:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'timer',
+          title: 'Timer',
+          shapeFillTitle: 'timer',
+          stateMachineName: 'State Machine 1',
+        );
+
+      case RiveIcon.unlock:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'unlock',
+          title: 'Unlock',
+          shapeStrokeTitle: 'unlock',
+          stateMachineName: 'State Machine 1',
+        );
+
+      case RiveIcon.warning:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'warning',
+          title: 'Warning',
+          shapeStrokeTitle: 'warning',
+          stateMachineName: 'State Machine 1',
+        );
+
+      case RiveIcon.wifi:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'wifi',
+          title: 'Wifi',
+          shapeStrokeTitle: 'wifi',
+          stateMachineName: 'State Machine 1',
         );
     }
   }
