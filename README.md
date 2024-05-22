@@ -63,6 +63,7 @@ Rive Animated Icons is [MIT-licensed](https://github.com/nikkieke/rive_animated_
 All the icons available are Rive animated. I've tagged the animators, you can find them in the [Rive community](https://rive.app/community/files/)
 - @drawsgood
 - @Daniyar
+- @nikkieke001
 
 ## Maintainers
 - [Nikki Eke](https://github.com/nikkieke)
