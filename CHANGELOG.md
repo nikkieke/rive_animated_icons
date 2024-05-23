@@ -9,3 +9,7 @@
 ## 1.0.2
 
 * Fixed bugs
+
+## 1.1.0
+
+* Added new icons
