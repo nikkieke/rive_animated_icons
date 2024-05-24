@@ -14,7 +14,8 @@
 This package provides rive animated icons that can be customized to suit your preference. It includes the riveIcon type, onTap, color parameters and others to give the user a level of control.
 
 ### Icons Sample
-![InShot_20240502_142027413](https://github.com/nikkieke/rive_animated_icons/assets/95222620/893adf6f-d9e8-4441-a6c0-b154331dfadc)
+
+![InShot_20240524_010842868](https://github.com/nikkieke/rive_animated_icons/assets/95222620/d4e70f96-dcf5-4c2c-b700-864406b6de65)
 
 ## Example
 
