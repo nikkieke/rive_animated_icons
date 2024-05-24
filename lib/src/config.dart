@@ -293,44 +293,44 @@ extension RiveIconExtension on RiveIcon {
         );
       case RiveIcon.add:
         return RiveAsset(
-            src: Asset.iconSet4,
-            artboard: 'add',
-            title: 'Add',
-            shapeStrokeTitle: 'add',
-            stateMachineName: 'State Machine 1',
+          src: Asset.iconSet4,
+          artboard: 'add',
+          title: 'Add',
+          shapeStrokeTitle: 'add',
+          stateMachineName: 'State Machine 1',
         );
       case RiveIcon.call:
         return RiveAsset(
-            src: Asset.iconSet4,
-            artboard: 'call',
-            title: 'Call',
-            shapeStrokeTitle: 'call',
-            stateMachineName: 'State Machine 1',
+          src: Asset.iconSet4,
+          artboard: 'call',
+          title: 'Call',
+          shapeStrokeTitle: 'call',
+          stateMachineName: 'State Machine 1',
         );
       case RiveIcon.copy:
         return RiveAsset(
-            src: Asset.iconSet4,
-            artboard: 'copy',
-            title: 'Copy',
-            shapeStrokeTitle: 'copy',
-            stateMachineName: 'State Machine 1',
+          src: Asset.iconSet4,
+          artboard: 'copy',
+          title: 'Copy',
+          shapeStrokeTitle: 'copy',
+          stateMachineName: 'State Machine 1',
         );
       case RiveIcon.dislike:
         return RiveAsset(
-            src: Asset.iconSet4,
-            artboard: 'dislike',
-            title: 'Dislike',
-            shapeStrokeTitle: 'dislike',
-            stateMachineName: 'State Machine 1',
+          src: Asset.iconSet4,
+          artboard: 'dislike',
+          title: 'Dislike',
+          shapeStrokeTitle: 'dislike',
+          stateMachineName: 'State Machine 1',
         );
 
       case RiveIcon.edit:
         return RiveAsset(
-            src: Asset.iconSet4,
-            artboard: 'edit',
-            title: 'Edit',
-            shapeFillTitle: 'edit',
-            stateMachineName: 'State Machine 1',
+          src: Asset.iconSet4,
+          artboard: 'edit',
+          title: 'Edit',
+          shapeFillTitle: 'edit',
+          stateMachineName: 'State Machine 1',
         );
       case RiveIcon.location:
         return RiveAsset(
