@@ -13,3 +13,7 @@
 ## 1.1.0
 
 * Added new icons
+
+## 1.1.1
+
+* Readme updated
