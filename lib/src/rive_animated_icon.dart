@@ -14,6 +14,7 @@ class RiveAnimatedIcon extends StatefulWidget {
     this.onTap,
     this.onHover,
     this.loopAnimation = false,
+    this.splashColor = Colors.transparent,
   });
 
   /// [color] is for rendering animated icon with respected color.
@@ -44,6 +45,10 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// Default Value: false
   final bool loopAnimation;
 
+  /// [splashColor] is for rendering the splash color when the icon is tapped
+  /// Default value: [Colors.transparent]
+  final Color splashColor;
+
   @override
   State<RiveAnimatedIcon> createState() => _RiveAnimatedIconState();
 }
@@ -53,6 +58,8 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
   Widget build(BuildContext context) {
     final icon = widget.riveIcon.getRiveAsset();
     return InkWell(
+      splashColor: widget.splashColor,
+      highlightColor: widget.splashColor,
       onTap: () {
         icon.input?.change(true);
         Future.delayed(const Duration(seconds: 1), () {
