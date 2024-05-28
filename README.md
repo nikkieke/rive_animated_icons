@@ -57,6 +57,9 @@ This callback is set by the user to perform actions onTap
 #### onHover:
 This callback is set by the user to perform actions onHover
 
+#### splashColor:
+This parameter is used to set icon splash color
+
 ## License
 Rive Animated Icons is [MIT-licensed](https://github.com/nikkieke/rive_animated_icons/edit/main/LICENSE)
 
