@@ -17,3 +17,7 @@
 ## 1.1.1
 
 * Readme updated
+
+## 1.1.2
+
+* Added splashColor param to RiveAnimatedIcon
