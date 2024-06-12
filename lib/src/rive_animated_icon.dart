@@ -10,6 +10,7 @@ class RiveAnimatedIcon extends StatefulWidget {
     super.key,
     this.height = 20,
     this.width = 20,
+    this.strokeWidth = 3,
     this.color = Colors.black,
     this.onTap,
     this.onHover,
@@ -49,6 +50,8 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// Default value: [Colors.transparent]
   final Color splashColor;
 
+  final double strokeWidth;
+
   @override
   State<RiveAnimatedIcon> createState() => _RiveAnimatedIconState();
 }
@@ -85,7 +88,9 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
               artboard,
               stateMachineName: '${icon.stateMachineName}',
             );
-            icon.input = controller.findSMI('active') as SMIBool;
+            icon..input = controller.findSMI('active') as SMIBool
+            
+            ..numberInput = controller.findSMI('strokeWidth') as SMINumber;
 
             artboard.forEachComponent((child) {
               if (child is Shape) {
@@ -100,6 +105,8 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
             widget.loopAnimation == true
                 ? icon.input!.change(true)
                 : icon.input!.change(false);
+
+            icon.numberInput?.value = widget.strokeWidth - 1;
           },
         ),
       ),
