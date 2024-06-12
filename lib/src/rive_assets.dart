@@ -31,10 +31,9 @@ class RiveAsset {
   final String? shapeStrokeTitle;
   final String? stateMachineName;
   late SMIBool? input;
+  late SMINumber? numberInput;
 
-  set setInput(SMIBool status) {
-    input = status;
-  }
+
 }
 
 ///The [Asset] class provides access to all the available icon's file paths
