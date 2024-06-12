@@ -2,6 +2,7 @@ import 'package:rive_animated_icon/rive_animated_icon.dart';
 
 /// [RiveIcon] is a collection of icons
 /// we're supporting right now
+
 enum RiveIcon {
   home,
   search,
