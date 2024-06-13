@@ -330,7 +330,7 @@ extension RiveIconExtension on RiveIcon {
           src: Asset.iconSet4,
           artboard: 'edit',
           title: 'Edit',
-          shapeFillTitle: 'edit',
+          shapeStrokeTitle: 'edit',
           stateMachineName: 'State Machine 1',
         );
       case RiveIcon.location:
@@ -338,7 +338,7 @@ extension RiveIconExtension on RiveIcon {
           src: Asset.iconSet4,
           artboard: 'location',
           title: 'Location',
-          shapeFillTitle: 'location',
+          shapeStrokeTitle: 'location',
           stateMachineName: 'State Machine 1',
         );
 
@@ -365,7 +365,7 @@ extension RiveIconExtension on RiveIcon {
           src: Asset.iconSet4,
           artboard: 'timer',
           title: 'Timer',
-          shapeFillTitle: 'timer',
+          shapeStrokeTitle: 'timer',
           stateMachineName: 'State Machine 1',
         );
 
