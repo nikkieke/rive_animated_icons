@@ -15,7 +15,7 @@ This package provides rive animated icons that can be customized to suit your pr
 
 ### Icons Sample
 
-![InShot_20240524_010842868](https://github.com/nikkieke/rive_animated_icons/assets/95222620/d4e70f96-dcf5-4c2c-b700-864406b6de65)
+![InShot_20240613_173737631](https://github.com/nikkieke/rive_animated_icons/assets/95222620/d8cf8d4d-e2f8-4408-a8f6-93cc49dc00a9)
 
 ## Example
 
@@ -32,6 +32,8 @@ RiveAnimatedIcon(
 ),
 
 ```
+
+
 ## Required parameter
 
 #### riveIcon:
@@ -56,6 +58,16 @@ This callback is set by the user to perform actions onTap
 
 #### onHover:
 This callback is set by the user to perform actions onHover
+
+#### splashColor:
+This parameter is used to set icon splash color
+
+#### strokeWidth:
+This parameter is used to set icon stroke width
+
+## Animated Icon stroke width sample
+![InShot_20240613_173956029](https://github.com/nikkieke/rive_animated_icons/assets/95222620/f5b9207b-7ce3-45e0-9485-5209373265be)
+
 
 ## License
 Rive Animated Icons is [MIT-licensed](https://github.com/nikkieke/rive_animated_icons/edit/main/LICENSE)
