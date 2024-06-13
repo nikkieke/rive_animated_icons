@@ -48,8 +48,11 @@ class RiveAnimatedIcon extends StatefulWidget {
 
   /// [splashColor] is for rendering the splash color when the icon is tapped
   /// Default value: [Colors.transparent]
+  /// it's an  optional parameter for [RiveAnimatedIcon]
   final Color splashColor;
 
+  /// [strokeWidth] is for rendering the animated icon with respected stroke width
+  /// Default value: [3]
   final double strokeWidth;
 
   @override
