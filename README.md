@@ -67,7 +67,8 @@ This parameter is used to set icon splash color
 This parameter is used to set icon stroke width
 
 ## Animated Icon stroke width sample
-![InShot_20240613_173956029](https://github.com/nikkieke/rive_animated_icons/assets/95222620/f5b9207b-7ce3-45e0-9485-5209373265be)
+![InShot_20240613_200940363](https://github.com/nikkieke/rive_animated_icons/assets/95222620/6906b106-8699-4b34-ac06-70e5e8055abf)
+
 
 
 ## License
