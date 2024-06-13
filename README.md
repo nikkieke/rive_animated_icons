@@ -15,7 +15,8 @@ This package provides rive animated icons that can be customized to suit your pr
 
 ### Icons Sample
 
-![InShot_20240613_173737631](https://github.com/nikkieke/rive_animated_icons/assets/95222620/d8cf8d4d-e2f8-4408-a8f6-93cc49dc00a9)
+![InShot_20240613_173737631](https://github.com/nikkieke/rive_animated_icons/assets/95222620/65947da9-2c72-4707-b48c-dca113c3e8e7)
+
 
 ## Example
 
@@ -67,7 +68,9 @@ This parameter is used to set icon splash color
 This parameter is used to set icon stroke width
 
 ## Animated Icon stroke width sample
-![InShot_20240613_200940363](https://github.com/nikkieke/rive_animated_icons/assets/95222620/6906b106-8699-4b34-ac06-70e5e8055abf)
+
+
+![InShot_20240613_203645913](https://github.com/nikkieke/rive_animated_icons/assets/95222620/0467daca-3c9d-425a-92ca-6ef1976749cf)
 
 
 
