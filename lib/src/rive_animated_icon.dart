@@ -10,7 +10,7 @@ class RiveAnimatedIcon extends StatefulWidget {
     super.key,
     this.height = 20,
     this.width = 20,
-    this.strokeWidth = 3,
+    this.strokeWidth = 2,
     this.color = Colors.black,
     this.onTap,
     this.onHover,
@@ -52,7 +52,7 @@ class RiveAnimatedIcon extends StatefulWidget {
   final Color splashColor;
 
   /// [strokeWidth] is for rendering the animated icon with respected stroke width
-  /// Default value: [3]
+  /// Default value: [2]
   final double strokeWidth;
 
   @override
