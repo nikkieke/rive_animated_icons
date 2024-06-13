@@ -26,6 +26,7 @@ RiveAnimatedIcon(
     width: 50,
     height: 50,
     color: Colors.green,
+    strokeWidth: 3,
     loopAnimation: false,
     onTap: (){},
     onHover: (value){}                          
