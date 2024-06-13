@@ -33,6 +33,10 @@ class RiveAsset {
   late SMIBool? input;
   late SMINumber? numberInput;
 
+  set setInput(SMIBool status) {
+    input = status;
+  }
+
 
 }
 
