@@ -1,6 +1,6 @@
 name: rive_animated_icon
 description: "This package provides rive animated icons that can be customized to suit your preference."
-version: 1.1.2
+version: 2.0.0
 repository: https://github.com/nikkieke/rive_animated_icons
 issue_tracker: https://github.com/nikkieke/rive_animated_icons/issues
 topics: [icons, animation]
