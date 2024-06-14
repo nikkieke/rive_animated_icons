@@ -21,3 +21,8 @@
 ## 1.1.2
 
 * Added splashColor param to RiveAnimatedIcon
+
+## 2.0.0
+
+* Added stroke width param to RiveAnimatedIcon. With this you can change the icon stroke width.
+* Updated all icon assets to reflect new changes.
