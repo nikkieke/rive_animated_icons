@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
           child: SingleChildScrollView(
@@ -67,7 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       ))
                   .toList()),
         ),
-
       )),
     );
   }
