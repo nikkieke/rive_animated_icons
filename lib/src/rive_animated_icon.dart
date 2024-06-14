@@ -91,9 +91,9 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
               artboard,
               stateMachineName: '${icon.stateMachineName}',
             );
-            icon..input = controller.findSMI('active') as SMIBool
-            
-            ..numberInput = controller.findSMI('strokeWidth') as SMINumber;
+            icon
+              ..input = controller.findSMI('active') as SMIBool
+              ..numberInput = controller.findSMI('strokeWidth') as SMINumber;
 
             artboard.forEachComponent((child) {
               if (child is Shape) {
