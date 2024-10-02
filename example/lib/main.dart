@@ -50,8 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             RiveAnimatedIcon(
                               riveIcon: e,
-                              width: 50,
-                              height: 50,
+                              width: 40,
+                              height: 40,
                               strokeWidth: 3,
                               loopAnimation: true,
                               onTap: () {
