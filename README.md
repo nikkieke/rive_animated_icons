@@ -17,7 +17,7 @@ We’re excited to announce that we’ve hit a major milestone — 50 animated i
 
 
 
-*Icons Sample*
+## Icons Sample ⬇️
 
  
 ![InShot_20241002_141941742](https://github.com/user-attachments/assets/efdc4c3d-cda9-4884-80e9-f308e7222446)
@@ -72,22 +72,24 @@ This parameter is used to set icon splash color
 #### strokeWidth:
 This parameter is used to set icon stroke width
 
-## Animated Icon stroke width sample
+## Animated Icon stroke width sample ⬇️
 
 
 ![InShot_20240613_203645913](https://github.com/nikkieke/rive_animated_icons/assets/95222620/0467daca-3c9d-425a-92ca-6ef1976749cf)
 
 
 
-## License
+## License 📝
 Rive Animated Icons is [MIT-licensed](https://github.com/nikkieke/rive_animated_icons/edit/main/LICENSE)
 
-## Animation credits
-All the icons available are Rive animated. I've tagged the animators, you can find them in the [Rive community](https://rive.app/community/files/)
-- @drawsgood
-- @Daniyar
-- @nikkieke001
 
-## Maintainers
+## Animation credits 🏆
+All the icons available were animated in Rive and sourced from the Rive community files. Special thanks to all the animators!
+- [@drawsgood](https://rive.app/@drawsgood/)
+- [@Daniyar](https://rive.app/@Daniyar/)
+- [@nikkieke001](https://rive.app/@nikkieke001/)
+
+  
+## Maintainers 🔩
 - [Nikki Eke](https://github.com/nikkieke)
 
