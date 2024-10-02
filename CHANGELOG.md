@@ -29,5 +29,5 @@
 
 ## 2.0.1
 
-* Updated Icons
+* Added new icons
 * Updated Readme
