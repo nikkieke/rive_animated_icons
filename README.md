@@ -1,4 +1,4 @@
-# RiveAnimatedIcons
+# RiveAnimatedIcons - 50+ Icons Now Available! 🚀
 
 <a href="https://developer.android.com" style="pointer-events: stroke;" target="_blank">
 <img src="https://img.shields.io/badge/platform-android-blue">
@@ -13,9 +13,14 @@
 
 This package provides rive animated icons that can be customized to suit your preference. It includes the riveIcon type, onTap, color parameters and others to give the user a level of control.
 
-### Icons Sample
+We’re excited to announce that we’ve hit a major milestone — 50 animated icons and counting! 🎉
 
-![InShot_20240613_173737631](https://github.com/nikkieke/rive_animated_icons/assets/95222620/65947da9-2c72-4707-b48c-dca113c3e8e7)
+
+
+*Icons Sample*
+
+ 
+![InShot_20241002_141941742](https://github.com/user-attachments/assets/efdc4c3d-cda9-4884-80e9-f308e7222446)
 
 
 ## Example
