@@ -46,6 +46,15 @@ enum RiveIcon {
   call,
   warning,
   edit,
+  cloud,
+  upload,
+  share,
+  pin,
+  cross,
+  check,
+  fingerprint,
+  gallery,
+  globe,
 }
 
 /// [RiveIconExtension] is used to return relevant RiveAsset depending on [RiveIcon]
@@ -393,6 +402,78 @@ extension RiveIconExtension on RiveIcon {
           artboard: 'wifi',
           title: 'Wifi',
           shapeStrokeTitle: 'wifi',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.cloud:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'cloud',
+          title: 'Cloud',
+          shapeStrokeTitle: 'cloud',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.upload:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'upload',
+          title: 'Upload',
+          shapeStrokeTitle: 'upload',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.share:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'share',
+          title: 'Share',
+          shapeStrokeTitle: 'share',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.pin:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'pin',
+          title: 'Pin',
+          shapeStrokeTitle: 'pin',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.cross:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'cross',
+          title: 'Cross',
+          shapeStrokeTitle: 'cross',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.check:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'check',
+          title: 'Check',
+          shapeStrokeTitle: 'check',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.fingerprint:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'fingerprint',
+          title: 'Fingerprint',
+          shapeStrokeTitle: 'fingerprint',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.gallery:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'gallery',
+          title: 'Gallery',
+          shapeStrokeTitle: 'gallery',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.globe:
+        return RiveAsset(
+          src: Asset.iconSet4,
+          artboard: 'globe',
+          title: 'Globe',
+          shapeStrokeTitle: 'globe',
           stateMachineName: 'State Machine 1',
         );
     }
