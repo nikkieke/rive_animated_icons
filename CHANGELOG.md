@@ -26,3 +26,8 @@
 
 * Added stroke width param to RiveAnimatedIcon. With this you can change the icon stroke width.
 * Updated all icon assets to reflect new changes.
+
+## 2.0.1
+
+* Updated Icons
+* Updated Readme
