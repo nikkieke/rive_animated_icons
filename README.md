@@ -78,6 +78,9 @@ This parameter is used to set icon stroke width
 ![InShot_20240613_203645913](https://github.com/nikkieke/rive_animated_icons/assets/95222620/0467daca-3c9d-425a-92ca-6ef1976749cf)
 
 
+## Best practices 🙌
+- If a Rive animation is set to loop and is scrolled off-screen, you can disable the loop to stop the animation and conserve resources while it's not visible. Similarly, you can re-enable the loop when the animation comes back into view.
+
 
 ## License 📝
 Rive Animated Icons is [MIT-licensed](https://github.com/nikkieke/rive_animated_icons/edit/main/LICENSE)
