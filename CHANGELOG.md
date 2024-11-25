@@ -31,3 +31,7 @@
 
 * Added new icons
 * Updated Readme
+
+## 2.0.2
+
+* Updated Readme
