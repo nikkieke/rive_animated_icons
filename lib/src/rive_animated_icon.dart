@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-
 import 'package:rive_animated_icon/rive_animated_icon.dart';
 
 /// [RiveAnimatedIcon] is used to render animated icons with different parameters and callbacks
@@ -16,6 +15,7 @@ class RiveAnimatedIcon extends StatefulWidget {
     this.onHover,
     this.loopAnimation = false,
     this.splashColor = Colors.transparent,
+    this.splashFactory = InkSplash.splashFactory,
   });
 
   /// [color] is for rendering animated icon with respected color.
@@ -51,8 +51,12 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// it's an  optional parameter for [RiveAnimatedIcon]
   final Color splashColor;
 
+  /// [splashFactory] is for rendering the splash factory when the icon is tapped
+  final InteractiveInkFeatureFactory splashFactory;
+
   /// [strokeWidth] is for rendering the animated icon with respected stroke width
-  /// Default value: [2]
+  /// Default value: [InkSplash.splashFactory]
+  /// it's an  optional parameter for [RiveAnimatedIcon]
   final double strokeWidth;
 
   @override
@@ -66,6 +70,7 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
     return InkWell(
       splashColor: widget.splashColor,
       highlightColor: widget.splashColor,
+      splashFactory: widget.splashFactory,
       onTap: () {
         icon.input?.change(true);
         Future.delayed(const Duration(seconds: 1), () {
@@ -105,9 +110,7 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
                 }
               }
             });
-            widget.loopAnimation == true
-                ? icon.input!.change(true)
-                : icon.input!.change(false);
+            widget.loopAnimation == true ? icon.input!.change(true) : icon.input!.change(false);
 
             icon.numberInput?.value = widget.strokeWidth - 1;
           },

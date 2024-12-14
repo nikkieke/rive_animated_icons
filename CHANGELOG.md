@@ -35,3 +35,7 @@
 ## 2.0.2
 
 * Updated Readme
+
+## 2.0.3
+
+* Added splashFactory param to RiveAnimatedIcon. With this you can change the splash effect of the icon.
