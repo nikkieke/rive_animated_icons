@@ -17,7 +17,6 @@ class RiveAnimatedIcon extends StatefulWidget {
     this.splashColor = Colors.transparent,
     this.splashFactory = InkSplash.splashFactory,
     this.mouseCursor = SystemMouseCursors.click,
-    this.hoverColor = Colors.transparent,
   });
 
   /// [color] is for rendering animated icon with respected color.
@@ -61,13 +60,8 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// it's an  optional parameter for [RiveAnimatedIcon]
   final MouseCursor mouseCursor;
 
-  /// [hoverColor] is for rendering the hover color when the icon is hovered
-  /// Default value: [Colors.transparent]
-  /// it's an  optional parameter for [RiveAnimatedIcon]
-  final Color hoverColor;
-
   /// [strokeWidth] is for rendering the animated icon with respected stroke width
-  /// Default value: [InkSplash.splashFactory]
+  /// Default value: [2]
   /// it's an  optional parameter for [RiveAnimatedIcon]
   final double strokeWidth;
 
@@ -84,7 +78,6 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
       highlightColor: widget.splashColor,
       splashFactory: widget.splashFactory,
       mouseCursor: widget.mouseCursor,
-      hoverColor: widget.splashColor,
       onTap: () {
         icon.input?.change(true);
         Future.delayed(const Duration(seconds: 1), () {
@@ -129,6 +122,72 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
             icon.numberInput?.value = widget.strokeWidth - 1;
           },
         ),
+      ),
+    );
+  }
+}
+
+/// [RiveAnimatedLoopIcon] renders an infinitely looping Rive animation icon
+class RiveAnimatedLoopIcon extends StatelessWidget {
+  const RiveAnimatedLoopIcon({
+    required this.riveIcon,
+    super.key,
+    this.height = 20,
+    this.width = 20,
+    this.strokeWidth = 2,
+    this.color = Colors.black,
+  });
+
+  /// [riveIcon] specifies the Rive asset and configuration.
+  final RiveIcon riveIcon;
+
+  /// [color] sets the color of the icon.
+  /// Default Value: [Colors.black]
+  final Color color;
+
+  /// [height] sets the height of the icon.
+  /// Default Value: [20]
+  final double height;
+
+  /// [width] sets the width of the icon.
+  /// Default Value: [20]
+  final double width;
+
+  /// [strokeWidth] controls the stroke width of the icon.
+  /// Default Value: [2]
+  final double strokeWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    final icon = riveIcon.getRiveAsset();
+    return SizedBox(
+      height: height,
+      width: width,
+      child: RiveAnimation.asset(
+        icon.src,
+        artboard: icon.artboard,
+        onInit: (artboard) {
+          final controller = RiveUtil.getRiveController(
+            artboard,
+            stateMachineName: '${icon.stateMachineName}',
+          );
+          icon
+            ..input = controller.findSMI('active') as SMIBool
+            ..numberInput = controller.findSMI('strokeWidth') as SMINumber;
+
+          icon.numberInput?.value = strokeWidth - 1;
+          artboard.forEachComponent((child) {
+            if (child is Shape) {
+              if (child.name == icon.shapeStrokeTitle) {
+                child.strokes.first.paint.color = color;
+              } else if (child.name == icon.shapeFillTitle) {
+                child.fills.first.paint.color = color;
+              }
+            }
+          });
+
+          icon.input?.change(true);
+        },
       ),
     );
   }
