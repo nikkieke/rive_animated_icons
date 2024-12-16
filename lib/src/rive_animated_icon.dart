@@ -17,7 +17,6 @@ class RiveAnimatedIcon extends StatefulWidget {
     this.splashColor = Colors.transparent,
     this.splashFactory = InkSplash.splashFactory,
     this.mouseCursor = SystemMouseCursors.click,
-    this.hoverColor = Colors.transparent,
   });
 
   /// [color] is for rendering animated icon with respected color.
@@ -61,13 +60,8 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// it's an  optional parameter for [RiveAnimatedIcon]
   final MouseCursor mouseCursor;
 
-  /// [hoverColor] is for rendering the hover color when the icon is hovered
-  /// Default value: [Colors.transparent]
-  /// it's an  optional parameter for [RiveAnimatedIcon]
-  final Color hoverColor;
-
   /// [strokeWidth] is for rendering the animated icon with respected stroke width
-  /// Default value: [InkSplash.splashFactory]
+  /// Default value: [2]
   /// it's an  optional parameter for [RiveAnimatedIcon]
   final double strokeWidth;
 
@@ -84,7 +78,6 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
       highlightColor: widget.splashColor,
       splashFactory: widget.splashFactory,
       mouseCursor: widget.mouseCursor,
-      hoverColor: widget.splashColor,
       onTap: () {
         icon.input?.change(true);
         Future.delayed(const Duration(seconds: 1), () {
