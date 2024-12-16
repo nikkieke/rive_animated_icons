@@ -35,3 +35,9 @@
 ## 2.0.2
 
 * Updated Readme
+
+## 2.0.3
+
+* Added splashFactory param to RiveAnimatedIcon. With this you can change the splash effect of the icon.
+* Added mouseCursor param to RiveAnimatedIcon. With this you can change the mouse cursor effect of the icon.
+* Added hoverColor param to RiveAnimatedIcon. With this you can change the hover color effect of the icon.
