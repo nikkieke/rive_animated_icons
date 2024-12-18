@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:rive/rive.dart';
 import 'package:rive_animated_icon/rive_animated_icon.dart';
 
 /// [RiveAnimatedIcon] is used to render animated icons with different parameters and callbacks
 class RiveAnimatedIcon extends StatefulWidget {
-  const RiveAnimatedIcon({
-    required this.riveIcon,
-    super.key,
-    this.height = 20,
-    this.width = 20,
-    this.strokeWidth = 2,
-    this.color = Colors.black,
-    this.onTap,
-    this.onHover,
-    this.loopAnimation = false,
-    this.splashColor = Colors.transparent,
-    this.splashFactory = InkSplash.splashFactory,
-    this.mouseCursor = SystemMouseCursors.click,
-  });
+  const RiveAnimatedIcon(
+      {required this.riveIcon,
+      super.key,
+      this.height = 20,
+      this.width = 20,
+      this.strokeWidth = 2,
+      this.color = Colors.black,
+      this.onTap,
+      this.onHover,
+      this.loopAnimation = false,
+      this.splashColor = Colors.transparent,
+      this.splashFactory = InkSplash.splashFactory,
+      this.mouseCursor = SystemMouseCursors.click,
+      this.enableAbsorbPointer = false});
 
   /// [color] is for rendering animated icon with respected color.
   /// Default Value: [Colors.black]
@@ -47,6 +46,11 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// Default Value: false
   final bool loopAnimation;
 
+  /// [strokeWidth] is for rendering the animated icon with respected stroke width
+  /// Default value: [2]
+  /// it's an  optional parameter for [RiveAnimatedIcon]
+  final double strokeWidth;
+
   /// [splashColor] is for rendering the splash color when the icon is tapped
   /// Default value: [Colors.transparent]
   /// it's an  optional parameter for [RiveAnimatedIcon]
@@ -60,10 +64,10 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// it's an  optional parameter for [RiveAnimatedIcon]
   final MouseCursor mouseCursor;
 
-  /// [strokeWidth] is for rendering the animated icon with respected stroke width
-  /// Default value: [2]
-  /// it's an  optional parameter for [RiveAnimatedIcon]
-  final double strokeWidth;
+  /// [enableAbsorbPointer] is a boolean to enable or disable absorbPointer.
+  /// To disable all interactive features of the [RiveAnimatedIcon] set this to true
+  /// Default Value: false
+  final bool enableAbsorbPointer;
 
   @override
   State<RiveAnimatedIcon> createState() => _RiveAnimatedIconState();
@@ -73,55 +77,28 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
   @override
   Widget build(BuildContext context) {
     final icon = widget.riveIcon.getRiveAsset();
-    return InkWell(
-      splashColor: widget.splashColor,
-      highlightColor: widget.splashColor,
-      splashFactory: widget.splashFactory,
-      mouseCursor: widget.mouseCursor,
-      onTap: () {
-        icon.input?.change(true);
-        Future.delayed(const Duration(seconds: 1), () {
-          icon.input?.change(false);
-        });
-        widget.onTap?.call();
-      },
-      onHover: (value) {
-        icon.input!.change(true);
-        Future.delayed(const Duration(seconds: 1), () {
-          icon.input!.change(false);
-        });
-        widget.onHover?.call(value);
-      },
-      child: SizedBox(
-        height: widget.height,
-        width: widget.width,
-        child: RiveAnimation.asset(
-          icon.src,
-          artboard: icon.artboard,
-          onInit: (artboard) {
-            final controller = RiveUtil.getRiveController(
-              artboard,
-              stateMachineName: '${icon.stateMachineName}',
-            );
-            icon
-              ..input = controller.findSMI('active') as SMIBool
-              ..numberInput = controller.findSMI('strokeWidth') as SMINumber;
-
-            artboard.forEachComponent((child) {
-              if (child is Shape) {
-                final shape = child;
-                if (shape.name == icon.shapeStrokeTitle) {
-                  shape.strokes.first.paint.color = widget.color;
-                } else if (shape.name == icon.shapeFillTitle) {
-                  shape.fills.first.paint.color = widget.color;
-                }
-              }
-            });
-            widget.loopAnimation == true ? icon.input!.change(true) : icon.input!.change(false);
-
-            icon.numberInput?.value = widget.strokeWidth - 1;
-          },
-        ),
+    return AbsorbPointer(
+      absorbing: widget.enableAbsorbPointer,
+      child: InkWell(
+        splashColor: widget.splashColor,
+        highlightColor: widget.splashColor,
+        splashFactory: widget.splashFactory,
+        mouseCursor: widget.mouseCursor,
+        onTap: () {
+          icon.input?.change(true);
+          Future.delayed(const Duration(seconds: 1), () {
+            icon.input?.change(false);
+          });
+          widget.onTap?.call();
+        },
+        onHover: (value) {
+          icon.input!.change(true);
+          Future.delayed(const Duration(seconds: 1), () {
+            icon.input!.change(false);
+          });
+          widget.onHover?.call(value);
+        },
+        child: RiveIconWidget(widget: widget, icon: icon),
       ),
     );
   }
