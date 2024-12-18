@@ -72,6 +72,15 @@ This parameter is used to set icon splash color
 #### strokeWidth:
 This parameter is used to set icon stroke width
 
+#### splashFactory:
+This parameter is used to set icon splashFactory
+
+#### mouseCursor:
+This parameter is used to set icon mouseCursor when hovered
+
+#### enableAbsorbPointer:
+When this parameter is set to `true` it disables all interactive features of the icon
+
 ## Animated Icon stroke width sample ⬇️
 
 
