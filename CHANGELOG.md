@@ -40,4 +40,4 @@
 
 * Added splashFactory param to RiveAnimatedIcon. With this you can change the splash effect of the icon.
 * Added mouseCursor param to RiveAnimatedIcon. With this you can change the mouse cursor effect of the icon.
-* Added enableAbsorbPointer param to RiveAnimatedIcon. With this you can change the hover color effect of the icon.
+* Added enableAbsorbPointer param to RiveAnimatedIcon. With this you can enable or disable the interactive features of the button
