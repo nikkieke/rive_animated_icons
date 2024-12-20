@@ -3,20 +3,21 @@ import 'package:rive_animated_icon/rive_animated_icon.dart';
 
 /// [RiveAnimatedIcon] is used to render animated icons with different parameters and callbacks
 class RiveAnimatedIcon extends StatefulWidget {
-  const RiveAnimatedIcon(
-      {required this.riveIcon,
-      super.key,
-      this.height = 20,
-      this.width = 20,
-      this.strokeWidth = 2,
-      this.color = Colors.black,
-      this.onTap,
-      this.onHover,
-      this.loopAnimation = false,
-      this.splashColor = Colors.transparent,
-      this.splashFactory = InkSplash.splashFactory,
-      this.mouseCursor = SystemMouseCursors.click,
-      this.enableAbsorbPointer = false});
+  const RiveAnimatedIcon({
+    required this.riveIcon,
+    super.key,
+    this.height = 20,
+    this.width = 20,
+    this.strokeWidth = 2,
+    this.color = Colors.black,
+    this.onTap,
+    this.onHover,
+    this.loopAnimation = false,
+    this.splashColor = Colors.transparent,
+    this.splashFactory = InkSplash.splashFactory,
+    this.mouseCursor = SystemMouseCursors.click,
+    this.enableAbsorbPointer = false,
+  });
 
   /// [color] is for rendering animated icon with respected color.
   /// Default Value: [Colors.black]
