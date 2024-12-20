@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 import 'package:rive_animated_icon/rive_animated_icon.dart';
 
+/// [RiveIconWidget] is the rive animated component.
+/// This class uses the asset path, state machine controller and other params provided to
+/// effectively render the rive animated icon component.
 class RiveIconWidget extends StatelessWidget {
   const RiveIconWidget({
     super.key,
