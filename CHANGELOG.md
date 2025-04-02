@@ -41,3 +41,8 @@
 * Added splashFactory param to RiveAnimatedIcon. With this you can change the splash effect of the icon.
 * Added mouseCursor param to RiveAnimatedIcon. With this you can change the mouse cursor effect of the icon.
 * Added enableAbsorbPointer param to RiveAnimatedIcon. With this you can enable or disable the interactive features of the button
+
+## 2.0.4
+
+* Implemented null handling
+* Fixed animation looping by default
