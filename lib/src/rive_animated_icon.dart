@@ -12,7 +12,7 @@ class RiveAnimatedIcon extends StatefulWidget {
     this.color = Colors.black,
     this.onTap,
     this.onHover,
-    this.loopAnimation = false,
+    this.loopAnimation = true,
     this.splashColor = Colors.transparent,
     this.splashFactory = InkSplash.splashFactory,
     this.mouseCursor = SystemMouseCursors.click,
@@ -86,17 +86,27 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
         splashFactory: widget.splashFactory,
         mouseCursor: widget.mouseCursor,
         onTap: () {
-          icon.input?.change(true);
-          Future.delayed(const Duration(seconds: 1), () {
-            icon.input?.change(false);
-          });
+          if (icon.input != null) {
+            icon.input!.change(true);
+            Future.delayed(const Duration(seconds: 1), () {
+              if (mounted && icon.input != null) {
+                icon.input!.change(false);
+              }
+            });
+          }
           widget.onTap?.call();
         },
         onHover: (value) {
-          icon.input!.change(true);
-          Future.delayed(const Duration(seconds: 1), () {
-            icon.input!.change(false);
-          });
+          if (icon.input != null) {
+            icon.input!.change(value);
+            if (value) {
+              Future.delayed(const Duration(seconds: 1), () {
+                if (mounted && icon.input != null) {
+                  icon.input!.change(false);
+                }
+              });
+            }
+          }
           widget.onHover?.call(value);
         },
         child: RiveIconWidget(widget: widget, icon: icon),

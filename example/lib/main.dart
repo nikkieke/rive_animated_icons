@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 40,
                               height: 40,
                               strokeWidth: 3,
-                              loopAnimation: true,
+                              loopAnimation: false,
                               onTap: () {
                                 debugPrint('tapped');
                               },
