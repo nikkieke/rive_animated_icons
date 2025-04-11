@@ -46,3 +46,7 @@
 
 * Implemented null handling
 * Fixed animation looping by default
+
+## 2.0.5
+
+* alphabetically rearranged the RiveIcon enum entries as well as the corresponding switch cases in the RiveIconExtension to improve readability and maintainability.
