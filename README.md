@@ -11,7 +11,7 @@
 </a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="MIT License"></a>
 
-This package provides rive animated icons that can be customized to suit your preference. It includes the riveIcon type, onTap, color parameters and others to give the user a level of control.
+This package provides rive animated icons that can be customized to suit your preference. It includes the riveIcon type, onTap, color parameters and others to give you a level of control.
 
 We’re excited to announce that we’ve hit a major milestone — 50 animated icons and counting! 🎉
 
