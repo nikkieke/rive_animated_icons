@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart' hide Factory;
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 import 'package:rive_animated_icon/rive_animated_icon.dart';
@@ -21,6 +20,7 @@ class RiveIconWidget extends StatefulWidget {
 }
 
 class _RiveIconWidgetState extends State<RiveIconWidget> {
+  static FileLoader? _fileLoader;
   bool _initialized = false;
 
   @override
@@ -31,6 +31,10 @@ class _RiveIconWidgetState extends State<RiveIconWidget> {
 
   Future<void> _init() async {
     await RiveNative.init();
+    _fileLoader ??= FileLoader.fromAsset(
+      widget.icon.src,
+      riveFactory: Factory.flutter,
+    );
     if (mounted) setState(() => _initialized = true);
   }
 
@@ -47,11 +51,7 @@ class _RiveIconWidgetState extends State<RiveIconWidget> {
       height: widget.widget.height,
       width: widget.widget.width,
       child: RiveWidgetBuilder(
-        fileLoader: FileLoader.fromAsset(
-          widget.icon.src,
-          //riveFactory: Factory.flutter,
-          riveFactory: kIsWeb ? Factory.flutter : Factory.rive,
-        ),
+        fileLoader: _fileLoader!,
         artboardSelector: ArtboardNamed(widget.icon.artboard),
         stateMachineSelector: widget.icon.stateMachineName != null
             ? StateMachineNamed(widget.icon.stateMachineName!)
