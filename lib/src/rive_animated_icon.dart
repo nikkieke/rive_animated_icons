@@ -86,26 +86,22 @@ class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
         splashFactory: widget.splashFactory,
         mouseCursor: widget.mouseCursor,
         onTap: () {
-          if (icon.input != null) {
-            icon.input!.change(true);
-            Future.delayed(const Duration(seconds: 1), () {
-              if (mounted && icon.input != null) {
-                icon.input!.change(false);
-              }
-            });
-          }
+          icon.viewModelInstance?.boolean('active')?.value = true;
+          Future.delayed(const Duration(seconds: 1), () {
+            if (mounted) {
+              icon.viewModelInstance?.boolean('active')?.value = false;
+            }
+          });
           widget.onTap?.call();
         },
         onHover: (value) {
-          if (icon.input != null) {
-            icon.input!.change(value);
-            if (value) {
-              Future.delayed(const Duration(seconds: 1), () {
-                if (mounted && icon.input != null) {
-                  icon.input!.change(false);
-                }
-              });
-            }
+          icon.viewModelInstance?.boolean('active')?.value = value;
+          if (value) {
+            Future.delayed(const Duration(seconds: 1), () {
+              if (mounted) {
+                icon.viewModelInstance?.boolean('active')?.value = false;
+              }
+            });
           }
           widget.onHover?.call(value);
         },
