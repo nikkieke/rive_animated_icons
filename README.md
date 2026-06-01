@@ -1,4 +1,4 @@
-# RiveAnimatedIcons - 50+ Icons Now Available! 🚀
+# RiveAnimatedIcons - 50+ Icons Available! 🚀
 
 <a href="https://developer.android.com" style="pointer-events: stroke;" target="_blank">
 <img src="https://img.shields.io/badge/platform-android-blue">
