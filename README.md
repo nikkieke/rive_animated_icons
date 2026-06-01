@@ -16,7 +16,7 @@ This package provides rive animated icons that can be customized to suit your pr
 
 
 ## Icons Sample ⬇️
-<img width="800" height="352" alt="rac-demo" src="https://github.com/user-attachments/assets/ce12acc3-4419-4392-912f-268dcefdcca9" />
+<img width="800" height="339" alt="rac-demo" src="https://github.com/user-attachments/assets/ac29afa5-af93-4633-a736-d8a9659c008d" />
 
 
 
