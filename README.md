@@ -13,14 +13,13 @@
 
 This package provides rive animated icons that can be customized to suit your preference. It includes the riveIcon type, onTap, color and other parameters to give you a level of control.
 
-We’re excited to announce that we’ve hit a major milestone — 50 animated icons and counting! 🎉
-
 
 
 ## Icons Sample ⬇️
+<img width="800" height="352" alt="rac-demo" src="https://github.com/user-attachments/assets/ce12acc3-4419-4392-912f-268dcefdcca9" />
 
- 
-![InShot_20241002_141941742](https://github.com/user-attachments/assets/efdc4c3d-cda9-4884-80e9-f308e7222446)
+
+
 
 
 ## Example
