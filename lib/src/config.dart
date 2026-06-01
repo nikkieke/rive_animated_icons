@@ -10,9 +10,13 @@ enum RiveIcon {
   arrowUp,
   audio,
   backward,
+  battery,
   bell,
   bin,
+  bluetooth,
   call,
+  card,
+  cart,
   check,
   cloud,
   copy,
@@ -25,8 +29,10 @@ enum RiveIcon {
   fingerprint,
   forward,
   gallery,
+  gift,
   globe,
   graduate,
+  graph,
   home,
   home2,
   like,
@@ -45,10 +51,12 @@ enum RiveIcon {
   settings,
   settings3,
   share,
+  shield,
   sliderHorizontal,
   sliderVertical,
   sound,
   star,
+  tag,
   timer,
   timer2,
   unlock,
@@ -104,6 +112,13 @@ extension RiveIconExtension on RiveIcon {
           title: 'Backward',
           stateMachineName: 'State Machine 1',
         );
+      case RiveIcon.battery:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'battery',
+          title: 'Battery',
+          stateMachineName: 'State Machine 1',
+        );
       case RiveIcon.bell:
         return RiveAsset(
           src: Asset.iconSet,
@@ -118,11 +133,32 @@ extension RiveIconExtension on RiveIcon {
           title: 'Bin',
           stateMachineName: 'State Machine 1',
         );
+      case RiveIcon.bluetooth:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'bluetooth',
+          title: 'BlueTooth',
+          stateMachineName: 'State Machine 1',
+        );
       case RiveIcon.call:
         return RiveAsset(
           src: Asset.iconSet,
           artboard: 'call',
           title: 'Call',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.card:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'card',
+          title: 'Card',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.cart:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'cart',
+          title: 'Cart',
           stateMachineName: 'State Machine 1',
         );
       case RiveIcon.check:
@@ -209,6 +245,13 @@ extension RiveIconExtension on RiveIcon {
           title: 'Gallery',
           stateMachineName: 'State Machine 1',
         );
+      case RiveIcon.gift:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'gift',
+          title: 'Gift',
+          stateMachineName: 'State Machine 1',
+        );
       case RiveIcon.globe:
         return RiveAsset(
           src: Asset.iconSet,
@@ -221,6 +264,13 @@ extension RiveIconExtension on RiveIcon {
           src: Asset.iconSet,
           artboard: 'academic-cap',
           title: 'Graduate',
+          stateMachineName: 'State Machine 1',
+        );
+      case RiveIcon.graph:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'graph',
+          title: 'Graph',
           stateMachineName: 'State Machine 1',
         );
       case RiveIcon.home:
@@ -349,6 +399,13 @@ extension RiveIconExtension on RiveIcon {
           title: 'Share',
           stateMachineName: 'State Machine 1',
         );
+      case RiveIcon.shield:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'shield',
+          title: 'Shield',
+          stateMachineName: 'State Machine 1',
+        );
       case RiveIcon.sliderHorizontal:
         return RiveAsset(
           src: Asset.iconSet,
@@ -376,6 +433,13 @@ extension RiveIconExtension on RiveIcon {
           artboard: 'LIKE/STAR',
           stateMachineName: 'STAR_Interactivity',
           title: 'Star',
+        );
+      case RiveIcon.tag:
+        return RiveAsset(
+          src: Asset.iconSet,
+          artboard: 'tag',
+          title: 'Tag',
+          stateMachineName: 'State Machine 1',
         );
       case RiveIcon.timer:
         return RiveAsset(
