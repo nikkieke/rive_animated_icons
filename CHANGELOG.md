@@ -50,3 +50,9 @@
 ## 2.0.5
 
 * alphabetically rearranged the RiveIcon enum entries as well as the corresponding switch cases in the RiveIconExtension to improve readability and maintainability.
+
+## 2.1.0
+* Bumped rive to ^0.14.6 for databinding support
+* Integrated Rive using the databinding APIs in the latest version
+* Upgraded all rive icons from using inputs to databinding
+* Added new icons
