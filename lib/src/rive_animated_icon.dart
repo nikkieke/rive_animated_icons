@@ -82,11 +82,6 @@ class RiveAnimatedIcon extends StatefulWidget {
 }
 
 class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
-  // Kept as state (instead of recreated in build()) so the RiveAsset's
-  // viewModelInstance -- attached once by RiveIconWidget's onLoaded callback
-  // -- survives rebuilds triggered by anything above this widget. A fresh
-  // RiveAsset per build would never get rebound, since RiveWidgetBuilder
-  // only re-fires onLoaded when its selectors actually change.
   late RiveAsset _icon;
 
   @override
