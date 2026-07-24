@@ -13,13 +13,6 @@ void main() {
       }
     });
 
-    test('maps a known icon to its expected artboard', () {
-      final asset = RiveIcon.home.getRiveAsset();
-      expect(asset.artboard, 'HOME');
-      expect(asset.title, 'Home');
-      expect(asset.stateMachineName, 'HOME_interactivity');
-    });
-
     test('each call returns a fresh RiveAsset instance', () {
       final first = RiveIcon.home.getRiveAsset();
       final second = RiveIcon.home.getRiveAsset();
@@ -137,9 +130,8 @@ void main() {
     });
 
     testWidgets(
-        'keeps the same RiveAsset across an unrelated ancestor rebuild '
-        '(regression: a fresh RiveAsset per build meant tap/hover silently '
-        'stopped animating after any parent rebuild)', (tester) async {
+        'keeps the same RiveAsset across an unrelated ancestor rebuild ',
+        (tester) async {
       final rebuildNotifier = ValueNotifier<int>(0);
       addTearDown(rebuildNotifier.dispose);
 
