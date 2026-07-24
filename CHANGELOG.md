@@ -56,3 +56,10 @@
 * Integrated Rive using the databinding APIs in the latest version
 * Upgraded all rive icons from using inputs to databinding
 * Added new icons
+
+## 2.2.0
+* Fixed a bug where tap/hover animations would silently stop working after any rebuild of a widget above RiveAnimatedIcon in the tree
+* Added semanticLabel param to RiveAnimatedIcon for accessibility, falling back to the icon's built-in title when not provided
+* Hardened native Rive initialization so a failure no longer crashes with an unhandled exception
+* Added test coverage
+* Removed unused native platform folders and the committed pubspec.lock from the package root

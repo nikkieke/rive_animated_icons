@@ -17,6 +17,7 @@ class RiveAnimatedIcon extends StatefulWidget {
     this.splashFactory = InkSplash.splashFactory,
     this.mouseCursor = SystemMouseCursors.click,
     this.enableAbsorbPointer = false,
+    this.semanticLabel,
   });
 
   /// [color] is for rendering animated icon with respected color.
@@ -70,42 +71,73 @@ class RiveAnimatedIcon extends StatefulWidget {
   /// Default Value: false
   final bool enableAbsorbPointer;
 
+  /// [semanticLabel] is used to describe the icon to accessibility services
+  /// (e.g. screen readers).
+  /// If not provided, this falls back to the icon's own [RiveAsset.title].
+  /// it's an optional parameter for [RiveAnimatedIcon]
+  final String? semanticLabel;
+
   @override
   State<RiveAnimatedIcon> createState() => _RiveAnimatedIconState();
 }
 
 class _RiveAnimatedIconState extends State<RiveAnimatedIcon> {
+  // Kept as state (instead of recreated in build()) so the RiveAsset's
+  // viewModelInstance -- attached once by RiveIconWidget's onLoaded callback
+  // -- survives rebuilds triggered by anything above this widget. A fresh
+  // RiveAsset per build would never get rebound, since RiveWidgetBuilder
+  // only re-fires onLoaded when its selectors actually change.
+  late RiveAsset _icon;
+
+  @override
+  void initState() {
+    super.initState();
+    _icon = widget.riveIcon.getRiveAsset();
+  }
+
+  @override
+  void didUpdateWidget(covariant RiveAnimatedIcon oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.riveIcon != oldWidget.riveIcon) {
+      _icon = widget.riveIcon.getRiveAsset();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final icon = widget.riveIcon.getRiveAsset();
-    return AbsorbPointer(
-      absorbing: widget.enableAbsorbPointer,
-      child: InkWell(
-        splashColor: widget.splashColor,
-        highlightColor: widget.splashColor,
-        splashFactory: widget.splashFactory,
-        mouseCursor: widget.mouseCursor,
-        onTap: () {
-          icon.viewModelInstance?.boolean('active')?.value = true;
-          Future.delayed(const Duration(seconds: 1), () {
-            if (mounted) {
-              icon.viewModelInstance?.boolean('active')?.value = false;
-            }
-          });
-          widget.onTap?.call();
-        },
-        onHover: (value) {
-          icon.viewModelInstance?.boolean('active')?.value = value;
-          if (value) {
+    final icon = _icon;
+    return Semantics(
+      button: true,
+      label: widget.semanticLabel ?? icon.title,
+      child: AbsorbPointer(
+        absorbing: widget.enableAbsorbPointer,
+        child: InkWell(
+          splashColor: widget.splashColor,
+          highlightColor: widget.splashColor,
+          splashFactory: widget.splashFactory,
+          mouseCursor: widget.mouseCursor,
+          onTap: () {
+            icon.viewModelInstance?.boolean('active')?.value = true;
             Future.delayed(const Duration(seconds: 1), () {
               if (mounted) {
                 icon.viewModelInstance?.boolean('active')?.value = false;
               }
             });
-          }
-          widget.onHover?.call(value);
-        },
-        child: RiveIconWidget(widget: widget, icon: icon),
+            widget.onTap?.call();
+          },
+          onHover: (value) {
+            icon.viewModelInstance?.boolean('active')?.value = value;
+            if (value) {
+              Future.delayed(const Duration(seconds: 1), () {
+                if (mounted) {
+                  icon.viewModelInstance?.boolean('active')?.value = false;
+                }
+              });
+            }
+            widget.onHover?.call(value);
+          },
+          child: RiveIconWidget(widget: widget, icon: icon),
+        ),
       ),
     );
   }

@@ -11,6 +11,19 @@ We are currently updating our rive animated icon library and adding new icons, i
 - When creating a pr if you would be adding new icons, also add the .rev file of your animation so that, it can be reviewed as well.
 
 
+## Running tests ⬇️​
+This package uses `rive_native`, which relies on prebuilt native binaries that
+aren't downloaded automatically. Before running `flutter test` locally for the
+first time (or after a clean checkout), run:
+
+```
+dart run rive_native:setup --verbose --clean --platform <your-platform>
+```
+
+Replace `<your-platform>` with `macos`, `linux`, or `windows` to match your
+development machine. Without this step, tests that mount `RiveAnimatedIcon`
+will fail with a `Failed to lookup symbol` error.
+
 ## Guideline to report an issue ⬇️​
 If you'll be reporting an issue, do provide the following in other to help us assist you better:
 - Library version

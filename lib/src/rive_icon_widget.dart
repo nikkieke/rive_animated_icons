@@ -30,12 +30,21 @@ class _RiveIconWidgetState extends State<RiveIconWidget> {
   }
 
   Future<void> _init() async {
-    await RiveNative.init();
-    _fileLoader ??= FileLoader.fromAsset(
-      widget.icon.src,
-      riveFactory: Factory.flutter,
-    );
-    if (mounted) setState(() => _initialized = true);
+    try {
+      await RiveNative.init();
+      _fileLoader ??= FileLoader.fromAsset(
+        widget.icon.src,
+        riveFactory: Factory.flutter,
+      );
+      if (mounted) setState(() => _initialized = true);
+    } catch (error, stackTrace) {
+      // Leave `_initialized` false so build() keeps returning the
+      // correctly-sized placeholder instead of crashing the app.
+      debugPrint(
+        'RiveIconWidget failed to initialize [${widget.icon.artboard}]: '
+        '$error\n$stackTrace',
+      );
+    }
   }
 
   @override
@@ -64,6 +73,8 @@ class _RiveIconWidgetState extends State<RiveIconWidget> {
           final vmi = state.viewModelInstance;
           widget.icon.viewModelInstance = vmi;
           vmi?.color('color')?.value = widget.widget.color;
+          // -1 compensates for the border the .riv file already draws around
+          // the icon shape, so `strokeWidth` matches the visible stroke.
           vmi?.number('strokeWidth')?.value = widget.widget.strokeWidth - 1;
           vmi?.boolean('active')?.value = widget.widget.loopAnimation;
         },

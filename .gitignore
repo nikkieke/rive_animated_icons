@@ -37,7 +37,5 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# This is a package, not an app: don't lock consumers to our resolution.
+/pubspec.lock
