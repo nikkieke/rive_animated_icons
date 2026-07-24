@@ -37,5 +37,4 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# This is a package, not an app: don't lock consumers to our resolution.
 /pubspec.lock
