@@ -1,40 +1,24 @@
-## 1.0.0
+## 2.1.1
+* Fixed a bug where tap/hover animations would silently stop working after any rebuild of a widget above RiveAnimatedIcon in the tree
+* Added semanticLabel param to RiveAnimatedIcon for accessibility, falling back to the icon's built-in title when not provided
+* Improved native Rive initialization so a failure no longer crashes with an unhandled exception
+* Added test coverage
+* Removed unused native platform folders
 
-* Initial version of the library
-
-## 1.0.1
-
-* Readme updated
-
-## 1.0.2
-
-* Fixed bugs
-
-## 1.1.0
-
+## 2.1.0
+* Bumped rive to ^0.14.6 for databinding support
+* Integrated Rive using the databinding APIs in the latest version
+* Upgraded all rive icons from using inputs to databinding
 * Added new icons
 
-## 1.1.1
+## 2.0.5
 
-* Readme updated
+* alphabetically rearranged the RiveIcon enum entries as well as the corresponding switch cases in the RiveIconExtension to improve readability and maintainability.
 
-## 1.1.2
+## 2.0.4
 
-* Added splashColor param to RiveAnimatedIcon
-
-## 2.0.0
-
-* Added stroke width param to RiveAnimatedIcon. With this you can change the icon stroke width.
-* Updated all icon assets to reflect new changes.
-
-## 2.0.1
-
-* Added new icons
-* Updated Readme
-
-## 2.0.2
-
-* Updated Readme
+* Implemented null handling
+* Fixed animation looping by default
 
 ## 2.0.3
 
@@ -42,17 +26,40 @@
 * Added mouseCursor param to RiveAnimatedIcon. With this you can change the mouse cursor effect of the icon.
 * Added enableAbsorbPointer param to RiveAnimatedIcon. With this you can enable or disable the interactive features of the button
 
-## 2.0.4
+## 2.0.2
 
-* Implemented null handling
-* Fixed animation looping by default
+* Updated Readme
 
-## 2.0.5
+## 2.0.1
 
-* alphabetically rearranged the RiveIcon enum entries as well as the corresponding switch cases in the RiveIconExtension to improve readability and maintainability.
-
-## 2.1.0
-* Bumped rive to ^0.14.6 for databinding support
-* Integrated Rive using the databinding APIs in the latest version
-* Upgraded all rive icons from using inputs to databinding
 * Added new icons
+* Updated Readme
+
+## 2.0.0
+
+* Added stroke width param to RiveAnimatedIcon. With this you can change the icon stroke width.
+* Updated all icon assets to reflect new changes.
+
+## 1.1.2
+
+* Added splashColor param to RiveAnimatedIcon
+
+## 1.1.1
+
+* Readme updated
+
+## 1.1.0
+
+* Added new icons
+
+## 1.0.2
+
+* Fixed bugs
+
+## 1.0.1
+
+* Readme updated
+
+## 1.0.0
+
+* Initial version of the library
