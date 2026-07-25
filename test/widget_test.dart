@@ -61,9 +61,6 @@ void main() {
       );
 
       await tester.tap(find.byType(RiveAnimatedIcon));
-      // The tap handler schedules a 1s delayed timer to reset the
-      // animation's "active" flag; flush it so it doesn't leak past the
-      // test's widget tree teardown.
       await tester.pump(const Duration(seconds: 1));
       expect(tapped, isTrue);
     });
